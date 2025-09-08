@@ -1,0 +1,309 @@
+import React, { useMemo, useState } from "react";
+
+// Single-file React personal site (TailwindCSS). 
+// Replace placeholder content with your real info. 
+// Exported as a default component so it previews instantly.
+
+export default function EsteemPersonalSite() {
+  const [dark, setDark] = useState(true);
+
+  const nav = [
+    { id: "about", label: "About" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "writing", label: "Writing" },
+    { id: "contact", label: "Contact" },
+  ];
+
+  const projects = useMemo(
+    () => [
+      {
+        title: "Capstone: Botanical Extracts Strategy",
+        summary:
+          "Market research, supplier outreach, cost modeling, and go‑to‑market plan for a chemical & personal‑care distributor.",
+        tags: ["Market Research", "Operations", "Go‑to‑Market"],
+        link: "#",
+      },
+      {
+        title: "GeoLens (concept)",
+        summary:
+          "Mobile app concept that identifies buildings and surfaces contextual history using on‑device AI and vector search.",
+        tags: ["Mobile", "Computer Vision", "Product"],
+        link: "#",
+      },
+      {
+        title: "Cash Dash (prototype)",
+        summary:
+          "Financial‑literacy app for students; onboarding funnel, habit loops, and gamified budgeting challenges.",
+        tags: ["UX", "Behavioral Science", "EdTech"],
+        link: "#",
+      },
+    ],
+    []
+  );
+
+  const experience = [
+    {
+      role: "M.S. Candidate — ESTEEM (Engineering, Science & Tech Entrepreneurship)",
+      org: "University of Notre Dame",
+      dates: "2025 – 2026",
+      bullets: [
+        "Curriculum in venture creation, technology commercialization, and product management.",
+        "Capstone with industry partner; cross‑functional work across R&D, supply chain, and sales.",
+      ],
+    },
+    {
+      role: "Mine Planning / Engineering Intern",
+      org: "Rio Tinto (Boron)",
+      dates: "Summer 2025",
+      bullets: [
+        "Designed multi‑bench dump lifts; analyzed haul truck cycles and constraints.",
+        "Built safety briefings on fatigue risk and shift hygiene; collaborated with ops leadership.",
+      ],
+    },
+  ];
+
+  const articles = [
+    {
+      title: "Sleep, Safety, and the Hidden Cost of Fatigue",
+      date: "Jul 2025",
+      link: "#",
+    },
+    {
+      title: "From Lab to Launch: What Makes a Technical Product ‘Ready’?",
+      date: "Jun 2025",
+      link: "#",
+    },
+  ];
+
+  const links = [
+    { label: "Email", href: "mailto:your.name@nd.edu" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/your‑handle" },
+    { label: "GitHub", href: "https://github.com/your‑handle" },
+    { label: "Resume (PDF)", href: "#" },
+  ];
+
+  return (
+    <div className={dark ? "dark" : ""}>
+      <div className="min-h-screen bg-zinc-50 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 transition-colors">
+        {/* Header */}
+        <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-zinc-50/70 dark:supports-[backdrop-filter]:bg-zinc-900/70 border-b border-zinc-200 dark:border-zinc-800">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <div className="flex items-center justify-between h-16">
+              <a href="#home" className="font-semibold tracking-tight text-lg">{/* TODO: Replace with your name */}Your Name</a>
+              <nav className="hidden md:flex items-center gap-6">
+                {nav.map((n) => (
+                  <a key={n.id} href={`#${n.id}`} className="text-sm hover:opacity-80">
+                    {n.label}
+                  </a>
+                ))}
+              </nav>
+              <div className="flex items-center gap-3">
+                <button
+                  aria-label="Toggle theme"
+                  onClick={() => setDark((d) => !d)}
+                  className="rounded-xl border border-zinc-300 dark:border-zinc-700 px-3 py-1 text-xs hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                >
+                  {dark ? "Dark" : "Light"}
+                </button>
+                <a
+                  href="#contact"
+                  className="hidden sm:inline-block rounded-xl bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 px-3 py-1.5 text-xs font-medium hover:opacity-90"
+                >
+                  Get in touch
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Hero */}
+        <section id="home" className="max-w-6xl mx-auto px-4 md:px-6 pt-14 pb-12">
+          <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-7">
+              <p className="text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Notre Dame • ESTEEM</p>
+              <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mt-2">
+                {/* TODO: Replace with your name */}Your Name
+              </h1>
+              <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
+                M.S. student in Engineering, Science & Technology Entrepreneurship. I help bridge
+                deep tech and real customers—turning prototypes into products with clear value.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {links.map((l) => (
+                  <a
+                    key={l.label}
+                    href={l.href}
+                    className="rounded-2xl border border-zinc-300 dark:border-zinc-700 px-4 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                    target={l.href.startsWith("http") ? "_blank" : undefined}
+                    rel="noreferrer"
+                  >
+                    {l.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="md:col-span-5">
+              <div className="aspect-square rounded-3xl bg-gradient-to-br from-zinc-200 to-zinc-100 dark:from-zinc-800 dark:to-zinc-700 shadow-inner flex items-center justify-center">
+                {/* Optional: swap with your headshot */}
+                <span className="text-8xl">👋</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About */}
+        <Section id="about" title="About">
+          <p>
+            I’m an ESTEEM master’s student focused on productizing technical ideas—customer discovery,
+            rapid prototyping, and evidence‑based roadmaps. Previously, I studied
+            <span className="font-medium"> Biochemistry</span> and worked across engineering and analytics.
+          </p>
+          <ul className="mt-4 grid md:grid-cols-3 gap-3 text-sm">
+            {[
+              "Customer discovery & JTBD interviewing",
+              "Go‑to‑market & pricing experiments",
+              "Data analysis (Python, Excel/Sheets)",
+              "Product design & wireframing",
+              "Stakeholder mapping",
+              "Technical writing & presentations",
+            ].map((s) => (
+              <li key={s} className="rounded-xl border border-zinc-200 dark:border-zinc-800 px-3 py-2">{s}</li>
+            ))}
+          </ul>
+        </Section>
+
+        {/* Experience */}
+        <Section id="experience" title="Experience">
+          <div className="space-y-4">
+            {experience.map((e) => (
+              <div
+                key={e.role}
+                className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4 hover:bg-zinc-50/60 dark:hover:bg-zinc-800/60"
+              >
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-lg font-semibold">{e.role}</h3>
+                  <span className="text-xs text-zinc-500">{e.dates}</span>
+                </div>
+                <p className="text-sm text-zinc-600 dark:text-zinc-300">{e.org}</p>
+                <ul className="mt-2 list-disc pl-5 space-y-1 text-sm">
+                  {e.bullets.map((b, i) => (
+                    <li key={i}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        {/* Projects */}
+        <Section id="projects" title="Projects">
+          <div className="grid md:grid-cols-3 gap-4">
+            {projects.map((p) => (
+              <a
+                key={p.title}
+                href={p.link}
+                className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4 hover:shadow-md transition-shadow"
+                target={p.link.startsWith("http") ? "_blank" : undefined}
+                rel="noreferrer"
+              >
+                <h3 className="font-semibold text-lg">{p.title}</h3>
+                <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">{p.summary}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {p.tags.map((t) => (
+                    <span key={t} className="text-xs rounded-lg px-2 py-1 border border-zinc-300 dark:border-zinc-700">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </a>
+            ))}
+          </div>
+        </Section>
+
+        {/* Writing */}
+        <Section id="writing" title="Writing">
+          <div className="space-y-3">
+            {articles.map((a) => (
+              <a
+                key={a.title}
+                href={a.link}
+                className="block rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 hover:bg-zinc-50/60 dark:hover:bg-zinc-800/60"
+                target={a.link.startsWith("http") ? "_blank" : undefined}
+                rel="noreferrer"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="font-medium">{a.title}</h3>
+                  <span className="text-xs text-zinc-500">{a.date}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </Section>
+
+        {/* Contact */}
+        <Section id="contact" title="Contact">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <p className="text-zinc-600 dark:text-zinc-300">
+                I’m open to roles in product, strategy, and operations. If you have an opportunity or
+                just want to talk shop, drop a note—I'll reply within a day.
+              </p>
+              <div className="mt-4 space-y-2">
+                {links.map((l) => (
+                  <div key={l.label}>
+                    <a className="hover:underline" href={l.href} target={l.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+                      {l.label}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4 space-y-3"
+            >
+              <div>
+                <label className="block text-sm mb-1">Name</label>
+                <input className="w-full rounded-xl border border-zinc-300 dark:border-zinc-700 bg-transparent px-3 py-2" placeholder="Your name" />
+              </div>
+              <div>
+                <label className="block text-sm mb-1">Email</label>
+                <input type="email" className="w-full rounded-xl border border-zinc-300 dark:border-zinc-700 bg-transparent px-3 py-2" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label className="block text-sm mb-1">Message</label>
+                <textarea className="w-full rounded-xl border border-zinc-300 dark:border-zinc-700 bg-transparent px-3 py-2 min-h-[120px]" placeholder="How can I help?" />
+              </div>
+              <button className="w-full rounded-xl bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 px-4 py-2 font-medium">
+                Send (demo)
+              </button>
+              <p className="text-xs text-zinc-500">This form is a visual demo. Hook it up to your email/API later.</p>
+            </form>
+          </div>
+        </Section>
+
+        {/* Footer */}
+        <footer className="mt-16 border-t border-zinc-200 dark:border-zinc-800">
+          <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 text-sm flex flex-wrap items-center justify-between gap-4">
+            <span>© {new Date().getFullYear()} {/* TODO: Name */}Your Name</span>
+            <div className="flex items-center gap-3">
+              <a href="#about" className="hover:underline">About</a>
+              <a href="#projects" className="hover:underline">Projects</a>
+              <a href="#contact" className="hover:underline">Contact</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
+}
+
+function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
+  return (
+    <section id={id} className="max-w-6xl mx-auto px-4 md:px-6 py-12">
+      <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{title}</h2>
+      <div className="mt-4 text-base leading-relaxed text-zinc-700 dark:text-zinc-200">{children}</div>
+    </section>
+  );
+}
