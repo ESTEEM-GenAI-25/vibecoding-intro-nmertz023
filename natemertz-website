@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nate Mertz — Portfolio & Resume</title>
+  <meta name="description" content="Personal website for Nate Mertz: bio, projects, blog notes, and contact." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">NM</a>
+    <nav id="nav" class="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#notes">Notes</a>
+      <a href="#contact">Contact</a>
+      <a class="btn small" href="assets/docs/resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+    <button id="menuBtn" class="menu" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <img src="assets/img/headshot.jpg" alt="Headshot of Nate Mertz in a navy suit." class="headshot" />
+        <div>
+          <h1 class="title">Hi, I’m <span class="accent">Nate Mertz</span>.</h1>
+          <p class="subtitle">
+            ESTEEM master’s student at the University of Notre Dame. I blend a biochemistry foundation with
+            engineering, entrepreneurship, and hands-on projects.
+          </p>
+          <div class="cta">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn ghost" href="assets/docs/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p>
+        Nate Mertz is from Albuquerque, New Mexico, and earned his B.A. in Biochemistry with minors in Biology and
+        Religion at Wabash College. He is now pursuing a Master of Science in Engineering, Science, and Technology
+        Entrepreneurship (ESTEEM) at the University of Notre Dame. Nate enjoys golf, global travel, exploring Spanish
+        language and culture, and staying active through running and calisthenics.
+      </p>
+      <div class="quick-facts">
+        <div>
+          <h3>Focus</h3>
+          <ul>
+            <li>Engineering + Entrepreneurship</li>
+            <li>Biochemistry background</li>
+            <li>Portfolio & blog hub</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Highlights</h3>
+          <ul>
+            <li>Notre Dame ESTEEM</li>
+            <li>Wabash College (B.A. Biochemistry)</li>
+            <li>Global travel & language</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Download</h3>
+          <ul>
+            <li><a href="assets/docs/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <details class="resume-details">
+        <summary>Résumé snapshot</summary>
+        <div class="resume-card">
+          <h4>Education</h4>
+          <p><strong>University of Notre Dame</strong> — ESTEEM (M.S.), May 2026 (anticipated)</p>
+          <p><strong>Wabash College</strong> — B.A. Biochemistry; minors in Biology & Religion (May 2024)</p>
+          <h4>Selected Experience</h4>
+          <ul>
+            <li><strong>Coast Southwest</strong>, Graduate Student Consultant (Aug 2025–Present)</li>
+            <li><strong>North American Language & Culture Assistant Program</strong>, Spanish Teaching Assistant (Oct 2024–May 2025)</li>
+            <li><strong>LOCKR Lab Research</strong>, Undergraduate Research (Aug 2023–Jan 2024)</li>
+            <li><strong>MSI Helicopters</strong>, Operations Assistant (May 2018–Oct 2022)</li>
+          </ul>
+          <p class="muted">Full details in the downloadable résumé.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="grid cards" id="project-list">
+        <!-- Replace the three examples with your real projects -->
+        <article class="card">
+          <h3>Example Project A</h3>
+          <p>One-sentence summary of the problem and your impact. Include skills/tools.</p>
+          <p class="tags">Skills: HTML, CSS, JS</p>
+          <a class="btn small" href="#" target="_blank" rel="noopener">View</a>
+        </article>
+        <article class="card">
+          <h3>Example Project B</h3>
+          <p>Brief result metric, what changed, who benefited. Link if live.</p>
+          <p class="tags">Skills: Analysis, Writing</p>
+          <a class="btn small" href="#" target="_blank" rel="noopener">View</a>
+        </article>
+        <article class="card">
+          <h3>Example Project C</h3>
+          <p>What you built, why it matters, and your role in 1–2 lines.</p>
+          <p class="tags">Skills: Research, Strategy</p>
+          <a class="btn small" href="#" target="_blank" rel="noopener">View</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- NOTES (BLOG) -->
+    <section id="notes" class="section">
+      <h2>Notes</h2>
+      <p class="muted">Short posts and in-progress ideas. Create files in <code>/notes</code> and they’ll list here.</p>
+      <ul id="notes-list" class="notes"></ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Reach me at <a href="mailto:nmertz@nd.edu">nmertz@nd.edu</a>.</p>
+      <!-- Optional: Formspree form (replace XXX with your endpoint if you enable it) -->
+      <!--
+      <form action="https://formspree.io/f/XXXXXXXX" method="POST" class="contact-form" novalidate>
+        <label>Name<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Message<textarea name="message" rows="5" required></textarea></label>
+        <button class="btn" type="submit">Send</button>
+      </form>
+      -->
+      <div class="socials" id="socials">
+        <!-- Fill in real links -->
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="GitHub">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Nate Mertz</span>
+    <button id="themeToggle" class="btn small ghost" aria-pressed="false">Toggle theme</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
